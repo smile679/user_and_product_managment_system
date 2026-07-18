@@ -51,7 +51,7 @@ export const createProduct = async(req, res) => {
   }
 }
 
-export const getProduct = async(req, res) => {
+export const fetchProducts = async(req, res) => {
 
   try {
     const products = await Product.find({});
