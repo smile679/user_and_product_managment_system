@@ -1,8 +1,10 @@
 import api from "./axiosInstance.js";
 
 export const registerUser = async ({ fullName, email, password }) => {
+  console.log(fullName, email, password);
+  
   try {
-    const res = await api.post("/auth/register/",
+    const res = await api.post("/auth/register",
     {
       fullName,
       email,
@@ -29,3 +31,7 @@ export const loginUser = async ({ email, password }) => {
     throw error;
   }
 };
+
+export const logOutUser = () =>{
+  return sessionStorage.removeItem("token")
+}
