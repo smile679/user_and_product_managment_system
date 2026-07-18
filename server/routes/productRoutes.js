@@ -1,7 +1,7 @@
 import express from "express"
 import {
   createProduct,
-  getProduct,
+  fetchProducts,
   updateProduct,
 } from "../controllers/productController.js";
 import authMiddleware from "../middleware/authMiddleware.js";
@@ -10,7 +10,7 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 
  router.post("/", authMiddleware, createProduct);
- router.get("/", authMiddleware, getProduct);
+ router.get("/", authMiddleware, fetchProducts);
  router.patch("/update/:productId/stock", authMiddleware, updateProduct);
  
 
